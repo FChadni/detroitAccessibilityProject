@@ -5,13 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Venues</title>
+    <title>Venue</title>
 
+    <link rel="stylesheet" href="style/all.min.css">
     <!-- link css file -->
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
     <div class="navbar_container">
         <!--Mobile device menu-->
         <div class="navbar_toggle" id="mobile_menu">
@@ -38,7 +39,28 @@
 
     </div>
 </nav>
-    <div class="venueInfo"><h1>Hello, this page will contain all the Venues</h1></div>
+<div class="container">
+    <div class="title">
+        <h1>Detroit Accessibility Project</h1>
+    </div>
+    <div class="searchBox">
+
+        <div class="searchBar">
+            <i class="fas fa-magnifying-glass searchIcon"></i>
+            <!--Search bar input box-->
+            <label><input type="text" class="search"
+                          placeholder="Search for accessibility resources, theatres, or venues in Detroit">
+            </label>
+            <!--search and mic icons inside the search box-->
+            <button id="micBtn"><i class="fas fa-microphone micIcon"></i></button>
+        </div>
+
+        <div class="searchButton">
+            <button id="searchBtn">Search</button>
+        </div>
+    </div>
+</div>
+
 
 <!-- Bootstrap js file -->
 <script src="./js/main.js"></script>

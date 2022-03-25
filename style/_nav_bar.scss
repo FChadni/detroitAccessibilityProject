@@ -12,16 +12,19 @@
   width: 100%;
   margin-bottom: 25px;
 }
+
 .navbar_container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 95%;
 }
+
 .navbar_menu{
   display: flex;
   align-items: center;
 }
+
 .navbar_links::after{
   content: "";
   width: 0;
@@ -30,13 +33,16 @@
   display: block;
   margin: auto;
 }
+
 .navbar_links:hover::after{
   width: 100%;
   transition: 0.5s;
 }
+
 .navbar_links:hover{
   color: var(--color-dark-blue);
 }
+
 .navbar_links{
   display: block;
   align-items: center;

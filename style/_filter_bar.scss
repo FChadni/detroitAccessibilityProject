@@ -1,0 +1,40 @@
+.filter{
+
+}
+
+.filterBy{
+
+}
+
+.category{
+
+}
+
+.accessibility{
+
+}
+
+.venueType{
+
+}
+
+.distance{
+
+}
+
+.filterButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+}
+
+#applyBtn, #clearBtn{
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  font-size: 18px;
+  padding: 5px 10px 5px 10px;
+  margin: 5px;
+  border-radius: 45px;
+  border: 0;
+}

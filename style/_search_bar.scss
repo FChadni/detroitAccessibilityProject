@@ -24,17 +24,20 @@
   //border-radius: 30px;
   //border: 1px solid var(--color-black);
 }
+
 .searchIcon{
   font-size: 35px;
   padding-right: 20px;
   padding-left: 15px;
   color: grey;
 }
+
 #micBtn{
   border: 0;
   outline: none;
   cursor: pointer;
 }
+
 .micIcon{
   font-size: 35px;
   padding-left: 20px;
@@ -43,6 +46,7 @@
   outline: none;
   border: 0;
 }
+
 .search{
   font-size: 28px;
   width: 1050px;
@@ -50,6 +54,7 @@
   background: transparent;
   outline: none;
 }
+
 #searchBtn{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
