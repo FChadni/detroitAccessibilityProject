@@ -1,3 +1,165 @@
+.title {
+  color: var(--color-black);
+  font-size: 1rem;
+  min-height: 200px;
+}
 
+:root {
+  /*-------------colors-----------*/
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark-blue: #005fca;
+  --coloe-bright-blue: #60d0ff;
+  --color-light-blue: #f2faff;
+  --color-yellow: #FEE7C9;
+  --color-red: red;
+  /*-------------fonts-----------*/
+  --body-font:"roboto";
+  /*.5rem=8px, 1rem=16px, 1.5rem=24px */
+  /*-------------font weight-----------*/
+  /*-------------z index-----------*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+
+.navbar_menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_links::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--color-dark-blue);
+  display: block;
+  margin: auto;
+}
+
+.navbar_links:hover::after {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.navbar_links:hover {
+  color: var(--color-dark-blue);
+}
+
+.navbar_links {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+  color: var(--text-color-light);
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+  margin: 2px;
+}
+
+.searchBox {
+  background-color: var(--color-yellow);
+  display: flex;
+  flex-direction: row;
+  padding: 100px 10px 100px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  padding: 15px 15px 15px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--color-black);
+  width: 1200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchIcon {
+  font-size: 35px;
+  padding-right: 20px;
+  padding-left: 15px;
+  color: grey;
+}
+
+#micBtn {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.micIcon {
+  font-size: 35px;
+  padding-left: 20px;
+  padding-right: 15px;
+  background: var(--color-white);
+  outline: none;
+  border: 0;
+}
+
+.search {
+  font-size: 28px;
+  width: 1050px;
+  border: 0;
+  background: transparent;
+  outline: none;
+}
+
+#searchBtn {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  font-size: 28px;
+  padding: 15px 25px 15px 25px;
+  margin-left: 20px;
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+.venueInfo {
+  color: black;
+}
 
 /*# sourceMappingURL=style.css.map */

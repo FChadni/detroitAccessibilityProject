@@ -1,0 +1,41 @@
+:root{
+  /*-------------colors-----------*/
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark-blue: #005fca;
+  --coloe-bright-blue: #60d0ff;
+  --color-light-blue: #f2faff;
+  --color-yellow: #FEE7C9;
+  --color-red: red;
+
+
+
+  /*-------------fonts-----------*/
+  --body-font:'roboto';
+
+  /*.5rem=8px, 1rem=16px, 1.5rem=24px */
+
+
+  /*-------------font weight-----------*/
+
+
+  /*-------------z index-----------*/
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  //box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html,body{
+  margin: 0;
+  //box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
