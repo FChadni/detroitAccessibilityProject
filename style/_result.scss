@@ -9,7 +9,9 @@
   display: grid;
   grid-template-columns: 50% 50%;
 }
-
+.venueDetail{
+  display: block;
+}
 .accessibilityFeature{
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -25,8 +27,10 @@
 }
 
 .accessibilitySubFeature{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  //display: flex;
+  //flex-direction: row;
   margin: 15px;
   //font-size: 26px;
 }

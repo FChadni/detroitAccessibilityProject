@@ -43,22 +43,75 @@
         <div class="title">
             <h1>Detroit Accessibility Project</h1>
         </div>
-        <div class="searchBox">
-
+        <form class="searchBox">
             <div class="searchBar">
                 <i class="fas fa-magnifying-glass searchIcon"></i>
                 <!--Search bar input box-->
-                <label><input type="text" class="search"
+                <label><input type="text" class="search" id="search"
                               placeholder="Search for accessibility resources, theatres, or venues in Detroit">
                 </label>
                 <!--search and mic icons inside the search box-->
                 <button id="micBtn"><i class="fas fa-microphone micIcon"></i></button>
             </div>
 
-            <a href="result.html"><div class="searchButton">
+            <div class="searchButton">
                 <button id="searchBtn">Search</button>
-            </div></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="resultArea">
+        <!-- ******************** Filter Area Begin ******************** -->
+        <div class="filter">
+            <div class="filterBy">
+
+            </div>
+            <div class="distance">
+                <h1>Distance</h1>
+                <ul>
+                    <li>Distance</li>
+                </ul>
+            </div>
+            <div class="filterButtons">
+                <div class="apply"><button id="applyBtn">Apply</button></div>
+                <div class="clear"><button id="clearBtn">Clear</button></div>
+            </div>
         </div>
+        <!-- ******************** Filter Area End ******************** -->
+        <!-- ******************** Results Begin ******************** -->
+        <main id="main">
+            <div class="results">
+                <div>
+                    <div class="venuePhoto">
+                    <img src="" alt="Image">
+                </div>
+                </div>
+                <div>
+                    <div class="venueDetail">
+                        <div>
+                            <div class="subtitle">Arab American National Museum</div>
+                        </div>
+                        <div>
+                            <div class="address"><p>13624 Michigan Ave, Dearborn, MI 48126</p></div>
+                        </div>
+                        <div>
+                            <div class="accessibilityText">Entrance</div>
+<!--                            <div class="accessibilitySubFeature">-->
+<!--                                <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
+<!--                                <div class="accessibilityText">Entrance</div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+<!--        <section id="accessibilityFeature">-->
+<!--            <div class="accessibilitySubFeature">-->
+<!--                <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
+<!--                <div class="accessibilityText">Entrance</div>-->
+<!--            </div>-->
+<!--        </section>-->
+        <!-- ******************** Results End ******************** -->
     </div>
 
     <!-- Bootstrap js file -->
