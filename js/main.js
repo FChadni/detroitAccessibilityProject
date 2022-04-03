@@ -22,6 +22,23 @@ let venues = {
     }]
 }
 console.log(venues)
+document.getElementById('searchBtn').addEventListener('click', ()=>{
+    let searchT = document.getElementById('search').value;
+    if (searchT)
+        getData(searchT);
+    // let element = document.querySelectorAll('.subtitle');
+    // let result = document.querySelectorAll('.results');
+    // console.log(searchT);
+    //
+    // element.forEach((element,index) =>{
+    //     if(element.innerTEXT.includes(searchT)){
+    //         result[index].classList.remove("hide");
+    //     }
+    //     else{
+    //         result[index].classList.add("hide");
+    //     }
+    // })
+})
 
 const main = document.getElementById('main');
 // const accessibilityFeature = document.getElementById('accessibilityFeature')
@@ -30,11 +47,6 @@ const main = document.getElementById('main');
 //     if (e.key === 'Enter') {
 //         getData();
 //     }
-// })
-// document.getElementById('searchBtn').addEventListener('click', ()=>{
-//     let searchT = document.getElementById('search').value;
-//     if(searchT)
-//         getData(searchT);
 // })
 
 function access() {
@@ -59,22 +71,34 @@ function getData() {
         // data1El.classList.add('accessibilitySubFeature');
         // for(let j = 0; j<i.accessibility.length; j++) {
         dataEl.innerHTML = `
-            <div class="venuePhoto">
-                <img src="images/image.png" alt="Image">
-            </div>
-            <div class="venueDetail">
-                <div class="subtitle">${i.venueName}</div>
-                <div class="address"><p>${i.address}</p></div>
-            </div>
-        `
-        main.appendChild(dataEl);
-            // accessibilityFeature.appendChild(data1El);
+        <div class="venuePhoto">
+            <img src="images/image.png" alt="Image">
+        </div>
+        <div class="venueDetail">
+            <div class="subtitle">${i.venueName}</div>
+            <div class="address"><p>${i.address}</p></div>
+            `
         for(let j = 0; j<i.accessibility.length; j++) {
-            var acc = `
+            var acc1 = `
             <div class="accessibilityText">${i.accessibility[j]}</div>
             `
-            main.innerHTML += acc;
+            main.innerHTML += acc1;
         }
+            `
+        </div>
+        <div class="readMore">
+                    <button id="readBtn">Read More</button>
+        </div>
+        `
+        // }
+        main.appendChild(dataEl);
+            // accessibilityFeature.appendChild(data1El);
+        // for(let j = 0; j<i.accessibility.length; j++) {
+        //     var acc = `
+        //     <div class="accessibilityText">${i.accessibility[j]}</div>
+        //     `
+        //     main.innerHTML += acc;
+        // }
 
         // main.appendChild(dataEl);
 
@@ -101,3 +125,10 @@ function getData() {
 }
 
 getData()
+
+// main.style.display = "grid"
+// main.style.gridTemplateColumns = "33% 33% 33%"
+//
+// const result = document.querySelector('.results')
+// result.style.display = "block"
+// result.style.width = "33%"

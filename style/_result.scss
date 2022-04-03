@@ -5,16 +5,22 @@
   padding: 0 15px 0 15px;
 }
 
+#main{
+  //display: grid;
+  //grid-template-columns: 33% 33%;
+}
 .results{
   display: grid;
   grid-template-columns: 50% 50%;
+  //width: 33%;
 }
 .venueDetail{
   display: block;
 }
 .accessibilityFeature{
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: flex;
+  //display: grid;
+  //grid-template-columns: 33% 33% 33%;
 }
 
 .subtitle{
