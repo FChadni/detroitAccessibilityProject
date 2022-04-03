@@ -22,10 +22,12 @@ let venues = {
     }]
 }
 console.log(venues)
-document.getElementById('searchBtn').addEventListener('click', ()=>{
-    let searchT = document.getElementById('search').value;
-    if (searchT)
-        getData(searchT);
+// document.getElementById('searchBtn').addEventListener('click', ()=>{
+//     let searchT = document.getElementById('search').value;
+//     if(search.value.length) {
+//         location.href = `/result.html/${search.value}`;
+//         getData(searchT);
+//     }
     // let element = document.querySelectorAll('.subtitle');
     // let result = document.querySelectorAll('.results');
     // console.log(searchT);
@@ -38,16 +40,21 @@ document.getElementById('searchBtn').addEventListener('click', ()=>{
     //         result[index].classList.add("hide");
     //     }
     // })
-})
+// })
 
 const main = document.getElementById('main');
 // const accessibilityFeature = document.getElementById('accessibilityFeature')
-// const search = document.getElementById('search');
-// search.addEventListener('keypress', (e) => {
-//     if (e.key === 'Enter') {
-//         getData();
-//     }
-// })
+
+const search = document.getElementById('search');
+search.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        console.log("hello");
+        if(search.value.length){
+            location.href = `/result.html/${search.value}`;
+            console.log("hello2");
+        }
+    }
+})
 
 function access() {
     let x = "";
