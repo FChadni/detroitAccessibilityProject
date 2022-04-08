@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root{
   /*-------------colors-----------*/
   --color-white: #ffffff;
@@ -8,12 +10,24 @@
   --color-yellow: #FEE7C9;
   --color-red: red;
 
-
-
   /*-------------fonts-----------*/
-  --body-font:'roboto';
+  --heading-font:'Roboto', sans-serif;
+  --body-font: 'Roboto', sans-serif;
 
+  /*-------------font size-----------*/
   /*.5rem=8px, 1rem=16px, 1.5rem=24px */
+  --heading-font-size: 1.5rem;
+  --search-font-size: 1.3rem;
+  --body-font-size: 1rem;
+
+  /*-------------padding-----------*/
+  --xlarge-padding: 60px;
+  --large-padding: 50px;
+  --mid-padding: 25px;
+  --small-padding: 15px;
+  --xsmall-padding: 10px;
+  --xxsmall-padding: 5px;
+
 
 
   /*-------------font weight-----------*/
@@ -41,4 +55,13 @@ ul{
 
 a{
   text-decoration: none;
+}
+
+#main{
+  display: block;
+}
+.results{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #005fca;
 }

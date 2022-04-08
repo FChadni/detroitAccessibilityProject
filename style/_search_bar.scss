@@ -1,67 +1,68 @@
-.searchBox{
+
+//Website title
+.search-container{
+  margin: 0;
+  padding: 0;
+}
+.website-title{
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  padding: var(--small-padding) var(--small-padding) var(--xlarge-padding) var(--small-padding);
+
+}
+
+//search bar
+.search-form{
   background-color: var(--color-yellow);
   display: flex;
   flex-direction: row;
-  padding: 100px 10px 100px 10px;
+  padding: var(--xlarge-padding) var(--mid-padding) var(--xlarge-padding) var(--mid-padding);
   justify-content: center;
   align-items: center;
 }
-
-.searchBar{
+.search-bar{
   background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   justify-items: center;
-  padding: 15px 15px 15px 15px;
-  border-radius: 30px;
+  padding: var(--xsmall-padding) var(--xsmall-padding) var(--xsmall-padding) var(--xsmall-padding);
+  border-radius: 45px;
   border: 1px solid var(--color-black);
-  width: 1200px;
+  width: 1000px;
   justify-content: center;
   align-items: center;
-  //width: 100%;
-  //min-width: 200px;
-  //padding: 15px 45px 15px 45px;
-  //border-radius: 30px;
-  //border: 1px solid var(--color-black);
 }
-
-.searchIcon{
-  font-size: 35px;
-  padding-right: 20px;
-  padding-left: 15px;
+.search-bar:focus{
+  border: 2px solid grey;
+}
+.search-bar input::-webkit-input-placeholder{
   color: grey;
 }
-
-#micBtn{
-  border: 0;
-  outline: none;
-  cursor: pointer;
+.search-bar input:focus::-webkit-input-placeholder{
+  opacity: 0;
 }
-
-.micIcon{
-  font-size: 35px;
-  padding-left: 20px;
-  padding-right: 15px;
-  background: var(--color-white);
-  outline: none;
-  border: 0;
+.search-icon, .mic-icon{
+  font-size: 25px;
+  padding: 5px 10px 5px 10px;
+  color: lightslategray;
 }
-
+.mic-icon{
+  opacity: 0;
+}
 .search{
-  font-size: 28px;
-  width: 1050px;
+  font-size: var(--search-font-size);
+  width: 100%;
   border: 0;
-  background: transparent;
+  background: white;
   outline: none;
 }
-
 #searchBtn{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
-  font-size: 28px;
+  font-size: var(--search-font-size);
   padding: 15px 25px 15px 25px;
   margin-left: 20px;
-  border-radius: 40px;
+  border-radius: 45px;
   border: 0;
   cursor: pointer;
 }

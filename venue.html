@@ -12,12 +12,41 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <nav class="navbar"></nav>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <div class="logo">LOGO</div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="index.html" class="navbar_links">HOME</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="venue.html" class="navbar_links">VENUE</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="about.html" class="navbar_links">ABOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container"></div>
+    <section class="search-container">
+        <div class="website-title"><h1>Detroit Accessibility Project</h1></div>
+        <form class="search-form">
+            <div class="search-bar">
+                <i class="fas fa-magnifying-glass search-icon"></i>
+                <!-- ##### Search bar input box ##### -->
+                <input type="text" class="search" id="search"
+                       placeholder="Search for accessibility resources, theatres, or venues in Detroit">
+                <!-- ##### search and mic icons inside the search box ##### -->
+                <i class="fas fa-microphone mic-icon"></i>
+            </div>
+            <div class="search-button">
+                <button type="button" id="searchBtn">Search</button>
+            </div>
+        </form>
+    </section>
 
-
-<!-- Bootstrap js file -->
-<script src="./js/main.js"></script>
+    <!-- linking js file -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

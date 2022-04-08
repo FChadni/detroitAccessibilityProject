@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .title {
   color: var(--color-black);
   font-size: 1rem;
@@ -14,8 +15,20 @@
   --color-yellow: #FEE7C9;
   --color-red: red;
   /*-------------fonts-----------*/
-  --body-font:"roboto";
+  --heading-font:"Roboto", sans-serif;
+  --body-font: "Roboto", sans-serif;
+  /*-------------font size-----------*/
   /*.5rem=8px, 1rem=16px, 1.5rem=24px */
+  --heading-font-size: 1.5rem;
+  --search-font-size: 1.3rem;
+  --body-font-size: 1rem;
+  /*-------------padding-----------*/
+  --xlarge-padding: 60px;
+  --large-padding: 50px;
+  --mid-padding: 25px;
+  --small-padding: 15px;
+  --xsmall-padding: 10px;
+  --xxsmall-padding: 5px;
   /*-------------font weight-----------*/
   /*-------------z index-----------*/
 }
@@ -38,6 +51,16 @@ a {
   text-decoration: none;
 }
 
+#main {
+  display: block;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #005fca;
+}
+
 .navbar {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -55,6 +78,10 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 95%;
+}
+
+.logo {
+  color: var(--color-white);
 }
 
 .navbar_menu {
@@ -95,65 +122,76 @@ a {
   margin: 2px;
 }
 
-.searchBox {
+.search-container {
+  margin: 0;
+  padding: 0;
+}
+
+.website-title {
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  padding: var(--small-padding) var(--small-padding) var(--xlarge-padding) var(--small-padding);
+}
+
+.search-form {
   background-color: var(--color-yellow);
   display: flex;
   flex-direction: row;
-  padding: 100px 10px 100px 10px;
+  padding: var(--xlarge-padding) var(--mid-padding) var(--xlarge-padding) var(--mid-padding);
   justify-content: center;
   align-items: center;
 }
 
-.searchBar {
+.search-bar {
   background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   justify-items: center;
-  padding: 15px 15px 15px 15px;
-  border-radius: 30px;
+  padding: var(--xsmall-padding) var(--xsmall-padding) var(--xsmall-padding) var(--xsmall-padding);
+  border-radius: 45px;
   border: 1px solid var(--color-black);
-  width: 1200px;
+  width: 1000px;
   justify-content: center;
   align-items: center;
 }
 
-.searchIcon {
-  font-size: 35px;
-  padding-right: 20px;
-  padding-left: 15px;
+.search-bar:focus {
+  border: 2px solid grey;
+}
+
+.search-bar input::-webkit-input-placeholder {
   color: grey;
 }
 
-#micBtn {
-  border: 0;
-  outline: none;
-  cursor: pointer;
+.search-bar input:focus::-webkit-input-placeholder {
+  opacity: 0;
 }
 
-.micIcon {
-  font-size: 35px;
-  padding-left: 20px;
-  padding-right: 15px;
-  background: var(--color-white);
-  outline: none;
-  border: 0;
+.search-icon, .mic-icon {
+  font-size: 25px;
+  padding: 5px 10px 5px 10px;
+  color: lightslategray;
+}
+
+.mic-icon {
+  opacity: 0;
 }
 
 .search {
-  font-size: 28px;
-  width: 1050px;
+  font-size: var(--search-font-size);
+  width: 100%;
   border: 0;
-  background: transparent;
+  background: white;
   outline: none;
 }
 
 #searchBtn {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
-  font-size: 28px;
+  font-size: var(--search-font-size);
   padding: 15px 25px 15px 25px;
   margin-left: 20px;
-  border-radius: 40px;
+  border-radius: 45px;
   border: 0;
   cursor: pointer;
 }
@@ -179,80 +217,11 @@ a {
   color: black;
 }
 
-.resultArea {
+.result-container {
   display: grid;
   grid-template-columns: 20% 80%;
   margin: 15px;
   padding: 0 15px 0 15px;
-}
-
-.results {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.venueDetail {
-  display: block;
-}
-
-.accessibilityFeature {
-  display: flex;
-}
-
-.address {
-  font-size: 20px;
-  padding: 5px;
-}
-
-.accessibilitySubFeature {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  margin: 15px;
-}
-
-.accessibilityIcon {
-  background-color: var(--coloe-bright-blue);
-  border-radius: 45px;
-  padding: 2px 5px 2px 5px;
-  font-size: 24px;
-  margin-right: 10px;
-}
-
-.accessibilityText {
-  font-size: 24px;
-  text-align: center;
-}
-
-.readMore {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-}
-
-#readBtn {
-  background-color: var(--color-yellow);
-  color: var(--color-black);
-  font-size: 18px;
-  padding: 15px 20px 15px 20px;
-  border-radius: 50px;
-  border: 0;
-  margin-bottom: 10px;
-}
-
-.loadMore {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-}
-
-#loadBtn {
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-  font-size: 20px;
-  padding: 15px 20px 15px 20px;
-  border-radius: 50px;
-  border: 0;
-  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

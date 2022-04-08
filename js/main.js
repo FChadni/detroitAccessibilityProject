@@ -1,27 +1,80 @@
-let venues = {
-    data:[{
+let venues = [
+    {
         venueName: "Arab American National Museum",
         address: "13624 Michigan Ave, Dearborn, MI 48126",
         category: "Museum",
         accessibility: ["Entrance","Parking","Restroom"],
-        image: "../images/image.png"
+        image: "./images/image.png"
     },
     {
         venueName: "Comerica Park",
         address: "2100 Woodward Ave, Detroit, MI 48201",
         category: "Park",
         accessibility: ["ALT Format","Parking","Wheelchair"],
-        image: "../images/image.png"
+        image: "./images/image.png"
     },
     {
         venueName: "Comerica Park",
         address: "2100 Woodward Ave, Detroit, MI 48201",
         category: "Park",
         accessibility: ["ALT Format","Parking","Wheelchair"],
-        image: "../images/image.png"
-    }]
-}
+        image: "./images/image.png"
+    }
+]
 console.log(venues)
+
+// Search functionality
+const search = document.getElementById('search');
+const searchBtn = document.getElementById('searchBtn');
+console.log(search)
+search.addEventListener('keypress', (e) => {
+// searchBtn.addEventListener('click', (e) => {
+    // if (e.key === 'Enter') {
+        const searchString = e.target.value.toLocaleString();
+        console.log(searchString)
+        for (let i of venues){
+            if(i.venueName.toLowerCase().includes(searchString) || i.address.toLowerCase().includes(searchString)){
+                console.log("if stste")
+                return displayVan();
+            }
+        }
+        // venues.filter((i) => {
+        //     if(i.venueName.toLowerCase().includes(searchString) || i.address.toLowerCase().includes(searchString)){
+        //         console.log("if stste")
+        //         displayVan();
+        //     }
+        // });
+        // return displayVan(filteredChar);
+    // }
+});
+
+const main = document.getElementById('main');
+const displayVan = () => {
+    const htmlString = venues.map((i) =>{
+        return `
+            <div class="results">
+                <div class="venue-photo">
+                    <img src="${i.image}" alt="image">
+                </div>
+                <div class="venue-detail">
+                    <div class="venue-name">${i.venueName}</div>
+                    <div class="venue-address"><p>${i.address}</p></div>
+                </div>
+            </div>
+        `
+    }).join('');
+    main.innerHTML = htmlString;
+    console.log(htmlString)
+}
+// displayVan()
+
+
+
+
+
+
+
+
 // document.getElementById('searchBtn').addEventListener('click', ()=>{
 //     let searchT = document.getElementById('search').value;
 //     if(search.value.length) {
@@ -42,19 +95,19 @@ console.log(venues)
     // })
 // })
 
-const main = document.getElementById('main');
+// const main = document.getElementById('main');
 // const accessibilityFeature = document.getElementById('accessibilityFeature')
 
-const search = document.getElementById('search');
-search.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        console.log("hello");
-        if(search.value.length){
-            location.href = `/result.html/${search.value}`;
-            console.log("hello2");
-        }
-    }
-})
+// const search = document.getElementById('search');
+// search.addEventListener('keypress', (e) => {
+//     if (e.key === 'Enter') {
+//         console.log("hello");
+//         if(search.value.length){
+//             location.href = `/result.html/${search.value}`;
+//             console.log("hello2");
+//         }
+//     }
+// })
 
 function access() {
     let x = "";
@@ -78,16 +131,16 @@ function getData() {
         // data1El.classList.add('accessibilitySubFeature');
         // for(let j = 0; j<i.accessibility.length; j++) {
         dataEl.innerHTML = `
-        <div class="venuePhoto">
+        <div class="venue-photo">
             <img src="images/image.png" alt="Image">
         </div>
-        <div class="venueDetail">
-            <div class="subtitle">${i.venueName}</div>
-            <div class="address"><p>${i.address}</p></div>
+        <div class="venue-detail">
+            <div class="venue-name">${i.venueName}</div>
+            <div class="venue-address"><p>${i.address}</p></div>
             `
         for(let j = 0; j<i.accessibility.length; j++) {
             var acc1 = `
-            <div class="accessibilityText">${i.accessibility[j]}</div>
+            <div class="accessibility-text">${i.accessibility[j]}</div>
             `
             main.innerHTML += acc1;
         }
@@ -130,12 +183,4 @@ function getData() {
 
     }
 }
-
-getData()
-
-// main.style.display = "grid"
-// main.style.gridTemplateColumns = "33% 33% 33%"
-//
-// const result = document.querySelector('.results')
-// result.style.display = "block"
-// result.style.width = "33%"
+// getData();

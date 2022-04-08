@@ -15,68 +15,66 @@
 <body>
     <!-- ##### Navigation Bar ##### -->
     <nav class="navbar">
+        <div class="navbar_container">
+            <div class="logo">LOGO</div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="index.html" class="navbar_links">HOME</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="venue.html" class="navbar_links">VENUE</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="about.html" class="navbar_links">ABOUT</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- ##### Search Bar Area ##### -->
-    <div class="container"></div>
+    <section class="search-container">
+        <div class="website-title"><h1>Detroit Accessibility Project</h1></div>
+        <form class="search-form">
+            <div class="search-bar">
+                <i class="fas fa-magnifying-glass search-icon"></i>
+                <!-- ##### Search bar input box ##### -->
+                <input type="text" class="search" id="search"
+                              placeholder="Search for accessibility resources, theatres, or venues in Detroit">
+                <!-- ##### search and mic icons inside the search box ##### -->
+                <i class="fas fa-microphone mic-icon"></i>
+            </div>
+            <div class="search-button">
+                <button type="button" id="searchBtn">Search</button>
+            </div>
+        </form>
+    </section>
 
-    <div class="resultArea">
-        <!-- ******************** Filter Area Begin ******************** -->
-        <div class="filter">
-            <div class="filterBy">
+    <!-- ##### Result Area ##### -->
+    <section class="result-container">
+        <div class="filter"></div>
 
-            </div>
-            <div class="distance">
-                <h1>Distance</h1>
-                <ul>
-                    <li>Distance</li>
-                </ul>
-            </div>
-            <div class="filterButtons">
-                <div class="apply"><button id="applyBtn">Apply</button></div>
-                <div class="clear"><button id="clearBtn">Clear</button></div>
-            </div>
-        </div>
-        <!-- ******************** Filter Area End ******************** -->
-        <!-- ******************** Results Begin ******************** -->
         <main id="main">
             <div class="results">
                 <div>
-                    <div class="venuePhoto">
-                    <img src="" alt="Image">
-                </div>
+                    <div class="venue-photo"><img src="" alt=""></div>
                 </div>
                 <div>
-                    <div class="venueDetail">
+                    <div class="venue-detail">
+                        <div><div class="venue-name"></div></div>
+                        <div><div class="venue-address"><p></p></div></div>
                         <div>
-                            <div class="subtitle">Arab American National Museum</div>
-                        </div>
-                        <div>
-                            <div class="address"><p>13624 Michigan Ave, Dearborn, MI 48126</p></div>
-                        </div>
-                        <div>
-                            <div class="accessibilityText">Entrance</div>
-<!--                            <div class="accessibilitySubFeature">-->
-<!--                                <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                                <div class="accessibilityText">Entrance</div>-->
-<!--                            </div>-->
+                            <div class="accessibility-icon"></div>
+                            <div class="accessibility-text"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="load-more-btn"></div>
         </main>
-<!--        <section id="accessibilityFeature">-->
-<!--            <div class="accessibilitySubFeature">-->
-<!--                <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                <div class="accessibilityText">Entrance</div>-->
-<!--            </div>-->
-<!--        </section>-->
-        <!-- ******************** Results End ******************** -->
-    </div>
+
+    </section>
 
     <!-- ##### Linking js files ##### -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/searchbar.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

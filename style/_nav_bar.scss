@@ -1,3 +1,4 @@
+
 .navbar{
   background-color: var(--color-black);
   color: var(--color-white);
@@ -12,19 +13,19 @@
   width: 100%;
   margin-bottom: 25px;
 }
-
 .navbar_container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 95%;
 }
-
+.logo{
+  color: var(--color-white);
+}
 .navbar_menu{
   display: flex;
   align-items: center;
 }
-
 .navbar_links::after{
   content: "";
   width: 0;

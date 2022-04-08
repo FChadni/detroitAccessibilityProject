@@ -5,7 +5,7 @@ const createSearchBar = () => {
         <div class="title">
             <h1>Detroit Accessibility Project</h1>
         </div>
-        <form action="../result.html" class="searchBox">
+        <form class="searchBox">
             <div class="searchBar">
                 <i class="fas fa-magnifying-glass searchIcon"></i>
                 <!-- ##### Search bar input box ##### -->
@@ -22,4 +22,5 @@ const createSearchBar = () => {
         </form>
     `
 }
-createSearchBar()
+createSearchBar();
+
