@@ -57,11 +57,22 @@ a{
   text-decoration: none;
 }
 
-#main{
-  display: block;
+.offscreen{
+  position: absolute;
+  left: -10000px;
 }
-.results{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: #005fca;
+.none{
+  display: none;
 }
+.flex{
+  display: flex;
+}
+//
+//#maindup{
+//  display: block;
+//}
+//.results{
+//  display: grid;
+//  grid-template-columns: 50% 50%;
+//  background-color: #005fca;
+//}

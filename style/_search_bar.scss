@@ -1,18 +1,18 @@
-
-//Website title
-.search-container{
+main{
   margin: 0;
   padding: 0;
 }
-.website-title{
+.searchEntry{
+  display: flex;
+  flex-direction: column;
+}
+.websiteTitle{
   font-family: var(--heading-font);
   font-size: var(--heading-font-size);
   padding: var(--small-padding) var(--small-padding) var(--xlarge-padding) var(--small-padding);
-
 }
-
-//search bar
-.search-form{
+// form styling
+.searchForm{
   background-color: var(--color-yellow);
   display: flex;
   flex-direction: row;
@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
 }
-.search-bar{
+.searchBar{
   background-color: var(--color-white);
   display: flex;
   flex-direction: row;
@@ -32,22 +32,24 @@
   justify-content: center;
   align-items: center;
 }
-.search-bar:focus{
-  border: 2px solid grey;
-}
-.search-bar input::-webkit-input-placeholder{
-  color: grey;
-}
-.search-bar input:focus::-webkit-input-placeholder{
-  opacity: 0;
-}
-.search-icon, .mic-icon{
+.search-icon, .clear-icon{
   font-size: 25px;
   padding: 5px 10px 5px 10px;
   color: lightslategray;
 }
-.mic-icon{
+
+// Detailing of search input box
+.searchBar:focus{
+  border: 2px solid grey;
+}
+.searchBar input::-webkit-input-placeholder{
+  color: grey;
+}
+.searchBar input:focus::-webkit-input-placeholder{
   opacity: 0;
+}
+.searchBar:hover, .searchBar:focus-within{
+  box-shadow: 0 2px 5px 2px white;
 }
 .search{
   font-size: var(--search-font-size);
@@ -56,6 +58,19 @@
   background: white;
   outline: none;
 }
+.clear{
+  justify-content: center;
+  align-items: center;
+  color: lightslategray;
+  border-right: thin solid var(--color-white);
+}
+.clear:hover, .clear:focus{
+  i{
+    color: red;
+  }
+}
+
+// search submit button
 #searchBtn{
   background-color: var(--color-dark-blue);
   color: var(--color-white);

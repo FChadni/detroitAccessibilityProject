@@ -1,90 +1,76 @@
-
-.result-container{
+.resultContainer{
   display: grid;
   grid-template-columns: 20% 80%;
   margin: 15px;
   padding: 0 15px 0 15px;
 }
+.result{
+  display: flex;
+}
+.searchResults{
+}
+.resultItem{
+  display: flex;
+  flex-direction: row;
+}
+.venueImage{
+  margin-right: 15px;
+}
+.venueDetail{
+  display: flex;
+  flex-direction: column;
+}
+.venueAddress, .venueName, .accessibilityFeature{
+  padding: 5px 0 5px 0;
+}
+.venueName{
+  font-size: 24px;
+  color: var(--color-black);
+  margin-bottom: 2px;
+}
+.venueAddress{
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+.accessibilityFeature{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 5px;
+  margin: 5px 0 5px 0;
+}
+.accessibilityFeatureItem{
+  display: flex;
+  flex-direction: row;
+}
+.accessibilityIcon{
+  background-color: var(--coloe-bright-blue);
+  border-radius: 45px;
+  padding: 2px 5px 2px 5px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.accessibilityText{
+  font-size: 20px;
+  text-align: center;
+}
+
+.readMore{
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+#readBtn{
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  font-size: var(--body-font-size);
+  padding: 10px 15px 10px 15px;
+  border-radius: 50px;
+  border: 0;
+  margin: 10px 0 10px 0;
+}
 
 
-//
-//#main{
-//  display: grid;
-//  grid-template-columns: 33% 33%;
-//}
-//.results{
-//  display: grid;
-//  grid-template-columns: 50% 50%;
-//  //width: 33%;
-//}
-//.venueDetail{
-//  display: block;
-//}
-//.accessibilityFeature{
-//  display: flex;
-//  //display: grid;
-//  //grid-template-columns: 33% 33% 33%;
-//}
-//
-//.subtitle{
-//
-//}
-//
-//.address{
-//  font-size: 20px;
-//  padding: 5px;
-//}
-//
-//.accessibilitySubFeature{
-//  display: grid;
-//  grid-template-columns: 33% 33% 33%;
-//  //display: flex;
-//  //flex-direction: row;
-//  margin: 15px;
-//  //font-size: 26px;
-//}
-//
-//.accessibilityIcon{
-//  background-color: var(--coloe-bright-blue);
-//  border-radius: 45px;
-//  padding: 2px 5px 2px 5px;
-//  font-size: 24px;
-//  margin-right: 10px;
-//}
-//
-//.accessibilityText{
-//  font-size: 24px;
-//  text-align: center;
-//}
-//
-//.readMore{
-//  display: flex;
-//  justify-items: center;
-//  justify-content: center;
-//}
-//
-//#readBtn{
-//  background-color: var(--color-yellow);
-//  color: var(--color-black);
-//  font-size: 18px;
-//  padding: 15px 20px 15px 20px;
-//  border-radius: 50px;
-//  border: 0;
-//  margin-bottom: 10px;
-//}
-//
-//.loadMore{
-//  display: flex;
-//  justify-items: center;
-//  justify-content: center;
-//}
-//
-//#loadBtn{
-//  background-color: var(--color-dark-blue);
-//  color: var(--color-white);
-//  font-size: 20px;
-//  padding: 15px 20px 15px 20px;
-//  border-radius: 50px;
-//  border: 0;
-//  margin-bottom: 10px;
-//}
+
+

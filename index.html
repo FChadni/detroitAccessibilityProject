@@ -14,67 +14,31 @@
 </head>
 <body>
     <!-- ##### Navigation Bar ##### -->
-    <nav class="navbar">
-        <div class="navbar_container">
-            <div class="logo">LOGO</div>
-            <ul class="navbar_menu">
-                <li class="navbar_item">
-                    <a href="index.html" class="navbar_links">HOME</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="venue.html" class="navbar_links">VENUE</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="about.html" class="navbar_links">ABOUT</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar"></nav>
 
     <!-- ##### Search Bar Area ##### -->
-    <section class="search-container">
-        <div class="website-title"><h1>Detroit Accessibility Project</h1></div>
-        <form class="search-form">
-            <div class="search-bar">
-                <i class="fas fa-magnifying-glass search-icon"></i>
-                <!-- ##### Search bar input box ##### -->
-                <input type="text" class="search" id="search"
-                              placeholder="Search for accessibility resources, theatres, or venues in Detroit">
-                <!-- ##### search and mic icons inside the search box ##### -->
-                <i class="fas fa-microphone mic-icon"></i>
-            </div>
-            <div class="search-button">
-                <button type="button" id="searchBtn">Search</button>
-            </div>
-        </form>
-    </section>
-
-    <!-- ##### Result Area ##### -->
-    <section class="result-container">
-        <div class="filter"></div>
-
-        <main id="main">
-            <div class="results">
-                <div>
-                    <div class="venue-photo"><img src="" alt=""></div>
+    <main>
+        <h1 class="offscreen">Detroit Accessibility Project</h1>
+        <section class="searchEntry">
+            <h2 class="offscreen">Search Term Entry</h2>
+            <div class="websiteTitle"><h1>Detroit Accessibility Project</h1></div>
+            <form action="result.html" id="searchForm" class="searchForm">
+                <div class="searchBar">
+                    <div id="searchIcon" aria-label="Search Icon"><i class="fas fa-magnifying-glass search-icon"></i></div>
+                    <label class="offscreen" for="search">Search for accessibility resources, theatres, or venues in Detroit</label>
+                    <input class="search" id="search" type="text" autocomplete="off"
+                           placeholder="Search for accessibility resources, theatres, or venues in Detroit">
+                    <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
+                        <i class="fa-solid fa-x clear-icon"></i></div>
                 </div>
-                <div>
-                    <div class="venue-detail">
-                        <div><div class="venue-name"></div></div>
-                        <div><div class="venue-address"><p></p></div></div>
-                        <div>
-                            <div class="accessibility-icon"></div>
-                            <div class="accessibility-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more-btn"></div>
-        </main>
-
-    </section>
+                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button">Search</button>
+            </form>
+        </section>
+    </main>
 
     <!-- ##### Linking js files ##### -->
-    <script src="./js/main.js"></script>
+<!--    <script src="js/main.js" type="module"></script>-->
+    <script src="js/navbar.js"></script>
+    <script src="js/searchbar.js"></script>
 </body>
 </html>

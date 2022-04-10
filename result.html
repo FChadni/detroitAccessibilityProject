@@ -13,43 +13,30 @@
 </head>
 <body>
     <!-- ##### Navigation Bar ##### -->
-    <nav class="navbar">
-        <div class="navbar_container">
-            <div class="logo">LOGO</div>
-            <ul class="navbar_menu">
-                <li class="navbar_item">
-                    <a href="index.html" class="navbar_links">HOME</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="venue.html" class="navbar_links">VENUE</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="about.html" class="navbar_links">ABOUT</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar"></nav>
 
     <!-- ##### Search Bar Area ##### -->
-    <section class="search-container">
-        <div class="website-title"><h1>Detroit Accessibility Project</h1></div>
-        <form class="search-form">
-            <div class="search-bar">
-                <i class="fas fa-magnifying-glass search-icon"></i>
-                <!-- ##### Search bar input box ##### -->
-                <input type="text" class="search" id="search"
-                       placeholder="Search for accessibility resources, theatres, or venues in Detroit">
-                <!-- ##### search and mic icons inside the search box ##### -->
-                <i class="fas fa-microphone mic-icon"></i>
-            </div>
-            <div class="search-button">
-                <button type="button" id="searchBtn">Search</button>
-            </div>
-        </form>
-    </section>
+    <main>
+        <h1 class="offscreen">Detroit Accessibility Project</h1>
+        <section class="searchEntry">
+            <h2 class="offscreen">Search Term Entry</h2>
+            <div class="websiteTitle"><h1>Detroit Accessibility Project</h1></div>
+            <form action="result.html" id="searchForm" class="searchForm">
+                <div class="searchBar">
+                    <div id="searchIcon" aria-label="Search Icon"><i class="fas fa-magnifying-glass search-icon"></i></div>
+                    <label class="offscreen" for="search">Search for accessibility resources, theatres, or venues in Detroit</label>
+                    <input class="search" id="search" type="text" autocomplete="off"
+                           placeholder="Search for accessibility resources, theatres, or venues in Detroit">
+                    <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
+                        <i class="fa-solid fa-x clear-icon"></i></div>
+                </div>
+                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button">Search</button>
+            </form>
+        </section>
+    </main>
 
     <!-- ##### Result Area ##### -->
-    <section class="result-container">
+    <section class="resultContainer">
         <div class="filter">
             <div class="filterBy">FILTER BY</div>
 
@@ -92,81 +79,39 @@
             </div>
         </div>
 
-        <main id="main">
-            <div class="results">
-                <div>
-                    <div class="venue-photo"><img src="" alt=""></div>
-                </div>
-                <div>
-                    <div class="venue-detail">
-                        <div><div class="venue-name"></div></div>
-                        <div><div class="venue-address"><p></p></div></div>
-                        <div>
-                            <div class="accessibility-icon"></div>
-                            <div class="accessibility-text"></div>
+        <div class="result">
+            <h2 class="offscreen">Search Results</h2>
+            <div class="statsBar"><div class="stats" id="stats" aria-live="assertive"></div></div>
+            <div id="searchResults" class="searchResults">
+                <div class="resultItem">
+                    <div class="venueImage"><img src="images/image.png" alt=""></div>
+                    <div class="venueDetail">
+                        <div class="venueName">Comerica Park</div>
+                        <div class="venueAddress">2100 Woodward Ave, Detroit, MI 48201</div>
+                        <div class="accessibilityFeature">
+                            <div class="accessibilityFeatureItem">
+                                <div class="accessibilityIcon">X</div>
+                                <div class="accessibilityText">venueName</div>
+                            </div>
+                            <div class="accessibilityFeatureItem">
+                                <div class="accessibilityIcon">X</div>
+                                <div class="accessibilityText">venueName</div>
+                            </div>
+                            <div class="accessibilityFeatureItem">
+                                <div class="accessibilityIcon">X</div>
+                                <div class="accessibilityText">venueName</div>
+                            </div>
                         </div>
+                        <button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button>
                     </div>
                 </div>
             </div>
-            <div class="load-more-btn"></div>
-        </main>
-
+        </div>
     </section>
 
-    <!-- ************************* Result Area Begin ************************* -->
-<!--    <div class="resultArea">-->
-<!--        <div class="results">-->
-<!--            <div class="venuePhoto">-->
-<!--                <img src="images/image.png" alt="Image">-->
-<!--            </div>-->
-<!--            <div class="venueDetail">-->
-<!--                <div class="subtitle">Arab American National Museum</div>-->
-<!--                <div class="address"><p>13624 Michigan Ave, Dearborn, MI 48126</p></div>-->
-<!--                <div class="accessibilityFeature">-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Entrance</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Parking</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Restroom</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Seating</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Sensory</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Sign Language</div>-->
-<!--                    </div>-->
-<!--                    <div class="accessibilitySubFeature">-->
-<!--                        <div class="accessibilityIcon"><i class="fas fa-microphone"></i></div>-->
-<!--                        <div class="accessibilityText">Wheelchair</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="readMore">-->
-<!--                    <button id="readBtn">Read More</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; ******************** Results End ******************** &ndash;&gt;-->
-<!--    </div>-->
-    <!-- ******************** Load More Begin ******************** -->
-<!--    <div class="loadMore">-->
-<!--        <button id="loadBtn">LOAD MORE</button>-->
-<!--    </div>-->
-    <!-- ******************** Load More End ******************** -->
-    <!-- ************************* Result Area End ************************* -->
-
     <!-- ##### Linking js files ##### -->
-    <script src="./js/main.js"></script>
+<!--    <script src="js/main.js"></script>-->
+    <script src="js/navbar.js"></script>
+    <script src="js/searchbar.js"></script>
 </body>
 </html>

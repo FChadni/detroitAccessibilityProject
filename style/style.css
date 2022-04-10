@@ -51,14 +51,17 @@ a {
   text-decoration: none;
 }
 
-#main {
-  display: block;
+.offscreen {
+  position: absolute;
+  left: -10000px;
 }
 
-.results {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: #005fca;
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
 }
 
 .navbar {
@@ -122,18 +125,23 @@ a {
   margin: 2px;
 }
 
-.search-container {
+main {
   margin: 0;
   padding: 0;
 }
 
-.website-title {
+.searchEntry {
+  display: flex;
+  flex-direction: column;
+}
+
+.websiteTitle {
   font-family: var(--heading-font);
   font-size: var(--heading-font-size);
   padding: var(--small-padding) var(--small-padding) var(--xlarge-padding) var(--small-padding);
 }
 
-.search-form {
+.searchForm {
   background-color: var(--color-yellow);
   display: flex;
   flex-direction: row;
@@ -142,7 +150,7 @@ a {
   align-items: center;
 }
 
-.search-bar {
+.searchBar {
   background-color: var(--color-white);
   display: flex;
   flex-direction: row;
@@ -155,26 +163,26 @@ a {
   align-items: center;
 }
 
-.search-bar:focus {
-  border: 2px solid grey;
-}
-
-.search-bar input::-webkit-input-placeholder {
-  color: grey;
-}
-
-.search-bar input:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-.search-icon, .mic-icon {
+.search-icon, .clear-icon {
   font-size: 25px;
   padding: 5px 10px 5px 10px;
   color: lightslategray;
 }
 
-.mic-icon {
+.searchBar:focus {
+  border: 2px solid grey;
+}
+
+.searchBar input::-webkit-input-placeholder {
+  color: grey;
+}
+
+.searchBar input:focus::-webkit-input-placeholder {
   opacity: 0;
+}
+
+.searchBar:hover, .searchBar:focus-within {
+  box-shadow: 0 2px 5px 2px white;
 }
 
 .search {
@@ -183,6 +191,17 @@ a {
   border: 0;
   background: white;
   outline: none;
+}
+
+.clear {
+  justify-content: center;
+  align-items: center;
+  color: lightslategray;
+  border-right: thin solid var(--color-white);
+}
+
+.clear:hover i, .clear:focus i {
+  color: red;
 }
 
 #searchBtn {
@@ -217,11 +236,85 @@ a {
   color: black;
 }
 
-.result-container {
+.resultContainer {
   display: grid;
   grid-template-columns: 20% 80%;
   margin: 15px;
   padding: 0 15px 0 15px;
+}
+
+.result {
+  display: flex;
+}
+
+.resultItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.venueImage {
+  margin-right: 15px;
+}
+
+.venueDetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.venueAddress, .venueName, .accessibilityFeature {
+  padding: 5px 0 5px 0;
+}
+
+.venueName {
+  font-size: 24px;
+  color: var(--color-black);
+  margin-bottom: 2px;
+}
+
+.venueAddress {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.accessibilityFeature {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 5px;
+  margin: 5px 0 5px 0;
+}
+
+.accessibilityFeatureItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.accessibilityIcon {
+  background-color: var(--coloe-bright-blue);
+  border-radius: 45px;
+  padding: 2px 5px 2px 5px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.accessibilityText {
+  font-size: 20px;
+  text-align: center;
+}
+
+.readMore {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+#readBtn {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  font-size: var(--body-font-size);
+  padding: 10px 15px 10px 15px;
+  border-radius: 50px;
+  border: 0;
+  margin: 10px 0 10px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
