@@ -22,7 +22,7 @@
         <section class="searchEntry">
             <h2 class="offscreen">Search Term Entry</h2>
             <div class="websiteTitle"><h1>Detroit Accessibility Project</h1></div>
-            <form action="result.html" id="searchForm" class="searchForm">
+            <form action="result.html" method="post" id="searchForm" class="searchForm">
                 <div class="searchBar">
                     <div id="searchIcon" aria-label="Search Icon"><i class="fas fa-magnifying-glass search-icon"></i></div>
                     <label class="offscreen" for="search">Search for accessibility resources, theatres, or venues in Detroit</label>
@@ -31,14 +31,14 @@
                     <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
                         <i class="fa-solid fa-x clear-icon"></i></div>
                 </div>
-                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button">Search</button>
+                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button" onclick="handleSearch()">Search</button>
             </form>
         </section>
     </main>
 
     <!-- ##### Linking js files ##### -->
-<!--    <script src="js/main.js" type="module"></script>-->
+    <script src="js/main.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/searchbar.js"></script>
+    <script src="js/searchResults.js"></script>
 </body>
 </html>

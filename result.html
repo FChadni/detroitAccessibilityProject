@@ -21,7 +21,7 @@
         <section class="searchEntry">
             <h2 class="offscreen">Search Term Entry</h2>
             <div class="websiteTitle"><h1>Detroit Accessibility Project</h1></div>
-            <form action="result.html" id="searchForm" class="searchForm">
+            <form action="result.html" method="get" id="searchForm" class="searchForm">
                 <div class="searchBar">
                     <div id="searchIcon" aria-label="Search Icon"><i class="fas fa-magnifying-glass search-icon"></i></div>
                     <label class="offscreen" for="search">Search for accessibility resources, theatres, or venues in Detroit</label>
@@ -84,25 +84,21 @@
             <div class="statsBar"><div class="stats" id="stats" aria-live="assertive"></div></div>
             <div id="searchResults" class="searchResults">
                 <div class="resultItem">
-                    <div class="venueImage"><img src="images/image.png" alt=""></div>
-                    <div class="venueDetail">
-                        <div class="venueName">Comerica Park</div>
-                        <div class="venueAddress">2100 Woodward Ave, Detroit, MI 48201</div>
-                        <div class="accessibilityFeature">
-                            <div class="accessibilityFeatureItem">
-                                <div class="accessibilityIcon">X</div>
-                                <div class="accessibilityText">venueName</div>
+                    <div class="resultSubItem">
+                        <div class="venueImage"><img src="" alt=""></div>
+                        <div class="venueDetail">
+                            <div class="venueName"></div>
+                            <div class="venueAddress"></div>
+                            <div id="accessibilityFeature" class="accessibilityFeature">
+                                <div class="accessibilityFeatureItem">
+                                    <div class="accessibilityIcon"></div>
+                                    <ul class="accessibilityText"><li></li></ul>
+                                </div>
                             </div>
-                            <div class="accessibilityFeatureItem">
-                                <div class="accessibilityIcon">X</div>
-                                <div class="accessibilityText">venueName</div>
-                            </div>
-                            <div class="accessibilityFeatureItem">
-                                <div class="accessibilityIcon">X</div>
-                                <div class="accessibilityText">venueName</div>
+                            <div>
+                                <button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button>
                             </div>
                         </div>
-                        <button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button>
                     </div>
                 </div>
             </div>
@@ -110,8 +106,8 @@
     </section>
 
     <!-- ##### Linking js files ##### -->
-<!--    <script src="js/main.js"></script>-->
+    <script src="js/main.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/searchbar.js"></script>
+    <script src="js/searchResults.js"></script>
 </body>
 </html>

@@ -311,6 +311,13 @@ main {
 .accessibilityText {
   font-size: 20px;
   text-align: center;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.accessibilityText ul {
+  font-size: 20px;
+  text-align: center;
 }
 
 .readMore {

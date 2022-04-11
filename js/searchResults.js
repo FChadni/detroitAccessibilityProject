@@ -1,76 +1,72 @@
+const searchResults = document.querySelector('.searchResults');
+const accessibilityFeature = document.querySelector('.accessibilityFeature');
 
-export const deleteSearchResults = () => {
-    const parentElement = document.getElementById("searchResults");
-    let child = parentElement.lastElementChild;
-    while (child) {
-        parentElement.removeChild(child)
-        child = parentElement.lastElementChild;
-    }
-}
+searchResults.style.display = "flex"
+searchResults.style.flexDirection = "column"
 
-// export const buildSearchResults = (resultArray) => {
-//     resultArray.forEach((result) => {
-//         const resultItem = createResultItem(result);
-//         const resultContents = document.createElement("div");
-//         resultContents.classList.add("resultContents");
-//         // if is not import since it will always have img
-//         if (result.img) {
-//             const resultImage = createResultImage(result);
-//             resultContents.append(resultImage);
-//         }
-//         const resultText = createResultText(result);
-//         resultContents.append(resultText);
-//         resultItem.append(resultContents);
-//         const searchResults = document.getElementById("searchResults");
-//         searchResults.append(resultItem);
-//     });
-// };
+const search = document.querySelector("input");
+const form= document.querySelector("form");
+let venueResults = [];
 
-// const createResultItem = (result) => {
-//     const resultItem = document.createElement("div");
-//     resultItem.classList.add("resultItem");
-//     const resultTitle = document.createElement("div");
-//     resultTitle.classList.add("resultTitle");
-//     // not important since i dont have link yet, just do pop up
-//     const link = document.createElement("a");
-//     link.href = `https://en.wikipedia.org/?curid=${result.id}`;
-//     link.textContent = result.title;
-//     link.target = "_blank";
-//     resultTitle.append(link);
+// window.addEventListener('load', () => {
 //
-//     resultItem.append(resultTitle);
-//     return resultItem;
-// };
-//
-// const createResultImage = (result) => {
-//     const resultImage = document.createElement("div");
-//     resultImage.classList.add("resultImage");
-//     const img = document.createElement("img");
-//     img.src = result.img;
-//     img.alt = result.title;
-//     resultImage.append(img);
-//     return resultImage;
-// };
-//
-// const createResultText = (result) => {
-//     const resultText = document.createElement("div");
-//     resultText.classList.add("resultText");
-//     const resultDescription = document.createElement("p");
-//     resultDescription.classList.add("resultDescription");
-//     resultDescription.textContent = result.text;
-//     resultText.append(resultDescription);
-//     return resultText;
-// };
+// })
 
-export const clearStatsLine = () => {
-    document.getElementById("stats").textContent = "";
-};
+const loadVenues = async () => {
+    try{
+        const res = await fetch('https://dap-project-api.herokuapp.com/venues');
+        venueResults = await res.json();
+        console.log(venueResults)
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const searchValue = search.value.toLowerCase();
 
-export const setStatsLine = (numberOfResults) => {
-    const statLine = document.getElementById("stats");
-    if (numberOfResults) {
-        statLine.textContent = `Displaying ${numberOfResults} results.`;
-    } else {
-        statLine.textContent = "Sorry, no results.";
+            localStorage.setItem("textvalue", searchValue);
+            // window.document.location = './result.html'
+            // const param = (new URL(document.location)).searchParams
+            // const searchVal = param.get("textvalue");
+
+            console.log(searchValue);
+            const venueFilter = venueResults.filter((ven) => {
+                return(
+                    ven.name.toLowerCase().includes(searchValue) ||
+                    ven.address.toLowerCase().includes(searchValue) ||
+                    ven.description.toLowerCase().includes(searchValue) ||
+                    ven.category.toLowerCase().includes(searchValue)
+                );
+            });
+            displayVenues(venueFilter);
+        });
+    } catch (err) {
+        console.log(err);
     }
 };
+
+const displayVenues = (venues) => {
+    console.log(venues)
+    const htmlString = venues
+        .map((venue) => {
+            return `
+            <div class="resultItem">
+                <div class="resultSubItem">
+                    <div class="venueImage"><img src="./images/image.png" alt="venue photo"></div>
+                    <div class="venueDetail">
+                        <div class="venueName">${venue.name}</div>
+                        <div class="venueAddress">${venue.address}</div>
+                        <div id="accessibilityFeature" class="accessibilityFeature">
+                            <div class="accessibilityFeatureItem">
+                                <ul class="accessibilityText">
+                                     ${venue.accessibility.map(v => v).map(v => v)}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div><button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button></div>
+            </div>
+        `
+        }).join('');
+    searchResults.innerHTML = htmlString;
+};
+
+loadVenues()
