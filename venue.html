@@ -36,14 +36,55 @@
 
     <section class="resultContainer">
         <div class="filter">
+            <div class="filterBy">FILTER BY</div>
+
+            <div class="category">
+                <h1>Accessibility</h1>
+                <ul>
+                    <li>Animal</li>
+                    <li>ALT Format</li>
+                    <li>Dietary</li>
+                    <li>Electrical</li>
+                    <li>Elevator</li>
+                    <li>Entrance</li>
+                    <li>Impaired Vision</li>
+                    <li>Parking</li>
+                    <li>Restroom</li>
+                    <li>Seating</li>
+                    <li>Security</li>
+                    <li>Sensory</li>
+                    <li>Sign Language</li>
+                    <li>Wheelchair</li>
+                </ul>
+            </div>
+            <div class="venueType">
+                <h1>Venue Type</h1>
+                <ul>
+                    <li>Aquarium</li>
+                    <li>Casino</li>
+                    <li>Convention Center</li>
+                    <li>Entertainment</li>
+                    <li>Museum</li>
+                    <li>Park</li>
+                    <li>Play Area</li>
+                    <li>Stadium</li>
+                    <li>Zoo</li>
+                </ul>
+            </div>
+            <div class="filterButtons">
+                <div class="apply"><button id="applyBtn">Apply</button></div>
+                <div class="clear"><button id="clearBtn">Clear</button></div>
+            </div>
         </div>
+
         <div class="result">
             <h2 class="offscreen">Search Results</h2>
             <div class="statsBar"><div class="stats" id="stats" aria-live="assertive"></div></div>
             <div id="searchResults" class="searchResults">
                 <div class="resultItem">
-                    <div class="venueImage"><img src="" alt=""></div>
-                    <div class="venueDetail">
+                    <div class="resultSubItem">
+                        <div class="venueImage"><img src="" alt=""></div>
+                        <div class="venueDetail">
                         <div class="venueName"></div>
                         <div class="venueAddress"></div>
                         <div id="accessibilityFeature" class="accessibilityFeature">
@@ -52,7 +93,10 @@
                                 <div class="accessibilityText"></div>
                             </div>
                         </div>
-                        <button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button>
+                        <div>
+                            <button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

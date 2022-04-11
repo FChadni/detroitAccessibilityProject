@@ -6,10 +6,17 @@
 }
 .result{
   display: flex;
+  flex-direction: row;
 }
 .searchResults{
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .resultItem{
+  display: flex;
+  flex-direction: column;
+}
+.resultSubItem{
   display: flex;
   flex-direction: row;
 }
@@ -17,6 +24,7 @@
   margin-right: 15px;
 }
 .venueDetail{
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -70,7 +78,5 @@
   border: 0;
   margin: 10px 0 10px 0;
 }
-
-
 
 
