@@ -1,5 +1,7 @@
 const searchResults = document.querySelector('.searchResults');
 const accessibilityFeature = document.querySelector('.accessibilityFeature');
+const readMoreBtn = document.querySelector('.readMore');
+let currentIndex = 0
 
 searchResults.style.display = "flex"
 searchResults.style.flexDirection = "column"
@@ -7,10 +9,8 @@ searchResults.style.flexDirection = "column"
 const search = document.querySelector("input");
 const form= document.querySelector("form");
 let venueResults = [];
+let venueFilter = [];
 
-// window.addEventListener('load', () => {
-//
-// })
 
 const loadVenues = async () => {
     try{
@@ -27,7 +27,8 @@ const loadVenues = async () => {
             // const searchVal = param.get("textvalue");
 
             console.log(searchValue);
-            const venueFilter = venueResults.filter((ven) => {
+            venueFilter = venueResults.filter((ven,index) => {
+                console.log(index)
                 return(
                     ven.name.toLowerCase().includes(searchValue) ||
                     ven.address.toLowerCase().includes(searchValue) ||
@@ -36,16 +37,40 @@ const loadVenues = async () => {
                 );
             });
             displayVenues(venueFilter);
+            popupFunction(venueFilter);
         });
     } catch (err) {
         console.log(err);
     }
 };
 
+const popupFunction = (venues) => {
+    console.log(venues)
+    readMoreBtn.addEventListener('click', () => {
+        console.log("hello")
+        showPopup(venues);
+    })
+    console.log("hello")
+}
+
+//function for showing popup box
+const showPopup = (venue) => {
+    // console.log(venue.name)
+    let popup = document.querySelector('.popup');
+    const closeBtn = document.querySelector('.closeBtn');
+
+    // const venueSubName = document.querySelector('.venueSubName');
+
+    popup.classList.remove('hide');
+    closeBtn.addEventListener('click',() => {
+        popup.classList.add('hide');
+    })
+}
+
 const displayVenues = (venues) => {
     console.log(venues)
     const htmlString = venues
-        .map((venue) => {
+        .map((venue,index) => {
             return `
             <div class="resultItem">
                 <div class="resultSubItem">
@@ -62,7 +87,8 @@ const displayVenues = (venues) => {
                         </div>
                     </div>
                 </div>
-                <div><button class="readMore" id="readBtn" type="button" aria-label="Read More Button">Read More</button></div>
+                <div><button class="readMore" id="readBtn" type="button" aria-label="Read More Button" 
+                onclick="showPopup();">Read More</button></div>
             </div>
         `
         }).join('');
