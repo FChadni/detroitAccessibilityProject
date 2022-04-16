@@ -5,11 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detroit Accessibility Project</title>
+    <title>See More Detail</title>
 
-    <!-- ##### Linking Fontawesome Icons ##### -->
     <link rel="stylesheet" href="style/all.min.css">
-    <!-- ##### link css file ##### -->
+    <!-- link css file -->
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -22,46 +21,88 @@
         <section class="searchEntry">
             <h2 class="offscreen">Search Term Entry</h2>
             <div class="websiteTitle"><h1>Detroit Accessibility Project</h1></div>
-            <form id="searchForm" class="searchForm">
+            <form action="result.html" method="get" id="searchForm" class="searchForm">
                 <div class="searchBar">
                     <div id="searchIcon" aria-label="Search Icon"><i class="fas fa-magnifying-glass search-icon"></i></div>
                     <label class="offscreen" for="search">Search for accessibility resources, theatres, or venues in Detroit</label>
-                    <input class="search" id="search" type="text" autocomplete="off"
+                    <input class="search" id="search" type="search" autocomplete="off"
                            placeholder="Search for accessibility resources, theatres, or venues in Detroit">
                     <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
                         <i class="fa-solid fa-x clear-icon"></i></div>
                 </div>
-                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button" >Search</button>
+                <button class="searchButton" type="submit" id="searchBtn" aria-label="submit button">Search</button>
             </form>
         </section>
     </main>
 
     <!-- popUp box -->
+    <section class="popup hide">
+        <button class="closeBtn">X</button>
+        <a href="#" class="linkBtn">LINK</a>
+        <div class="venuePopupInfo">
+            <div class="venueMainInfo">
+                <div class="venueSubName">The Filmora</div>
+            </div>
+            <div class="venueSubInfo">
+                <div class="venueDescription">
+                    <div class="venueSubAddress">Address:</div>
+                    <div class="venuePhone">Cell:</div>
+                    <p class="venueDes">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aliquam at beatae laudantium nisi pariatur quae quia, suscipit. Asperiores dicta esse facilis fugit
+                        ipsa quas quos saepe vitae. Debitis, eaque nam. Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto aut beatae consequuntur est inventore maiores perspiciatis sint voluptatibus! Ab
+                        architecto autem consequuntur eaque explicabo inventore, neque quia recusandae repellendus voluptates.
+                    </p>
+                </div>
+                <div class="venueSubImage"><img src="images/image.png" alt="image"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- ##### Result Area ##### -->
     <section class="resultContainer">
-        <section class="popup hide">
-            <button class="closeBtn">X</button>
-            <a href="#" class="linkBtn">LINK</a>
-            <div class="venuePopupInfo">
-                <div class="venueMainInfo">
-                    <div class="venueSubName">The Filmora</div>
-                </div>
-                <div class="venueSubInfo">
-                    <div class="venueDescription">
-                        <div class="venueSubAddress">Address:</div>
-                        <div class="venuePhone">Cell:</div>
-                        <p class="venueDes">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquam at beatae laudantium nisi pariatur quae quia, suscipit. Asperiores dicta esse facilis fugit
-                            ipsa quas quos saepe vitae. Debitis, eaque nam. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Architecto aut beatae consequuntur est inventore maiores perspiciatis sint voluptatibus! Ab
-                            architecto autem consequuntur eaque explicabo inventore, neque quia recusandae repellendus voluptates.
-                        </p>
-                    </div>
-                    <div class="venueSubImage"><img src="images/image.png" alt="image"></div>
-                </div>
+        <div class="filter">
+            <div class="filterBy">FILTER BY</div>
+
+            <div class="category">
+                <h1>Accessibility</h1>
+                <ul>
+                    <li>Animal</li>
+                    <li>ALT Format</li>
+                    <li>Dietary</li>
+                    <li>Electrical</li>
+                    <li>Elevator</li>
+                    <li>Entrance</li>
+                    <li>Impaired Vision</li>
+                    <li>Parking</li>
+                    <li>Restroom</li>
+                    <li>Seating</li>
+                    <li>Security</li>
+                    <li>Sensory</li>
+                    <li>Sign Language</li>
+                    <li>Wheelchair</li>
+                </ul>
             </div>
-        </section>
+            <div class="venueType">
+                <h1>Venue Type</h1>
+                <ul>
+                    <li>Aquarium</li>
+                    <li>Casino</li>
+                    <li>Convention Center</li>
+                    <li>Entertainment</li>
+                    <li>Museum</li>
+                    <li>Park</li>
+                    <li>Play Area</li>
+                    <li>Stadium</li>
+                    <li>Zoo</li>
+                </ul>
+            </div>
+            <div class="filterButtons">
+                <div class="apply"><button id="applyBtn">Apply</button></div>
+                <div class="clear"><button id="clearBtn">Clear</button></div>
+            </div>
+        </div>
+
         <div class="result">
             <h2 class="offscreen">Search Results</h2>
             <div class="statsBar"><div class="stats" id="stats" aria-live="assertive"></div></div>
@@ -75,7 +116,7 @@
                             <div id="accessibilityFeature" class="accessibilityFeature">
                                 <div class="accessibilityFeatureItem">
                                     <div class="accessibilityIcon"></div>
-                                    <ul class="accessibilityText"><li></li></ul>
+                                    <ul class="accessibilityText"></ul>
                                 </div>
                             </div>
                             <div>
@@ -87,10 +128,8 @@
             </div>
         </div>
     </section>
-    </div>
 
-    <!-- ##### Linking js files ##### -->
-    <script src="js/main.js"></script>
+<!-- ##### Linking js files ##### -->
     <script src="js/navbar.js"></script>
     <script src="js/searchResults.js"></script>
 </body>

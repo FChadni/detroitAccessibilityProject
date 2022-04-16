@@ -16,6 +16,7 @@ const loadVenues = async () => {
     try{
         const res = await fetch('https://dap-project-api.herokuapp.com/venues');
         venueResults = await res.json();
+        displayVenues(venueResults);
         console.log(venueResults)
         form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -27,9 +28,9 @@ const loadVenues = async () => {
             // const searchVal = param.get("textvalue");
 
             console.log(searchValue);
-            venueFilter = venueResults.filter((ven,index) => {
+            venueFilter = venueResults.filter((ven, index) => {
                 console.log(index)
-                return(
+                return (
                     ven.name.toLowerCase().includes(searchValue) ||
                     ven.address.toLowerCase().includes(searchValue) ||
                     ven.description.toLowerCase().includes(searchValue) ||
