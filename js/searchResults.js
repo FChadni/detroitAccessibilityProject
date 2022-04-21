@@ -56,7 +56,7 @@ const popupFunction = (venues) => {
     })
 }
 
-//function for showing popup box
+
 const showPopup = (venue) => {
     let popup = document.querySelector('.popup');
     const closeBtn = document.querySelector('.closeBtn');
