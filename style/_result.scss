@@ -41,8 +41,7 @@
   margin-bottom: 2px;
 }
 .accessibilityFeature{
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: flex;
   gap: 5px;
   margin: 5px 0 5px 0;
 }
@@ -70,6 +69,15 @@
   text-align: center;
 }
 
+.readMoreBtn{
+  position: absolute;
+  display: flex;
+  bottom: 10%;
+  //left: 25%;
+  //right: 25%;
+  transform: translate(50%,50%);
+  justify-content: center;
+}
 .readMore{
   display: flex;
   justify-items: center;
